@@ -17,7 +17,7 @@ const Chat = () => {
       withCredentials: true,
     });
 
-    console.log(chat.data.messages);
+
 
     const chatMessages = chat?.data?.messages.map((msg) => {
       const { senderId, text } = msg;
@@ -46,7 +46,7 @@ const Chat = () => {
     });
 
     socket.on("messageReceived", ({ firstName, lastName, text }) => {
-      console.log(firstName + " :  " + text);
+
       setMessages((messages) => [...messages, { firstName, lastName, text }]);
     });
 
