@@ -30,7 +30,7 @@ const Premium = () => {
     const { amount, keyId, currency, notes, orderId } = order.data;
 
     const options = {
-      key: keyId,
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
       amount,
       currency,
       name: "Dev Tinder",
