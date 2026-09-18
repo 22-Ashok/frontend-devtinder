@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import UserCard from "./UserCard";
 
 const Feed = () => {
+  console.log("from frontend -> feed component");
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
 
@@ -15,6 +16,7 @@ const Feed = () => {
       const res = await axios.get(BASE_URL + "/feed", {
         withCredentials: true,
       });
+      console.log("from frontend ->" , res?.data?.data);
       dispatch(addFeed(res?.data?.data));
     } catch (err) {
       //TODO: handle error
